@@ -6,7 +6,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from accounts.views import FacebookLogin, GithubLogin
+from accounts.views import FacebookLogin, GithubLogin,TwitterLogin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,4 +16,6 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('auth/facebook/', FacebookLogin.as_view(), name='fb_login'),
     path('auth/github/', GithubLogin.as_view(), name='github_login'),
+    path('auth/twitter/', TwitterLogin.as_view(), name='github_login'),
+    
 ]
